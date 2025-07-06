@@ -7,8 +7,8 @@ jobs:
     name: Static Analysis
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Shellcheck
-      uses: docker://koalaman/shellcheck:latest
-      with:
-        args: ./entrypoint.sh
+      - uses: actions/checkout@v4
+      - name: Shellcheck
+        uses: docker://koalaman/shellcheck:latest
+        with:
+          args: ./entrypoint.sh

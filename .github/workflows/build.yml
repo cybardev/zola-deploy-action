@@ -7,43 +7,43 @@ jobs:
     name: Build with minimal options
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Build with the latest action rev
-      uses: shalzz/zola-deploy-action@master
-      env:
-        BUILD_ONLY: true
-        BUILD_DIR: test-site
+      - uses: actions/checkout@master
+      - name: Build with the latest action rev
+        uses: cybardev/zola-deploy-action@main
+        env:
+          BUILD_ONLY: true
+          BUILD_DIR: test-site
   build-2:
     name: Build with BUILD_FLAGS
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Build with the latest action rev
-      uses: shalzz/zola-deploy-action@master
-      env:
-        BUILD_ONLY: true
-        BUILD_DIR: test-site
-        BUILD_FLAGS: --drafts --base-url example.com
+      - uses: actions/checkout@master
+      - name: Build with the latest action rev
+        uses: cybardev/zola-deploy-action@main
+        env:
+          BUILD_ONLY: true
+          BUILD_DIR: test-site
+          BUILD_FLAGS: --drafts --base-url example.com
   build-3:
     name: Build with CHECK_LINKS
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Build with the latest action rev
-      uses: shalzz/zola-deploy-action@master
-      env:
-        BUILD_ONLY: true
-        BUILD_DIR: test-site
-        CHECK_LINKS: true
+      - uses: actions/checkout@master
+      - name: Build with the latest action rev
+        uses: cybardev/zola-deploy-action@main
+        env:
+          BUILD_ONLY: true
+          BUILD_DIR: test-site
+          CHECK_LINKS: true
   build-4:
     name: Build with CHECK_LINKS and CHECK_FLAGS
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Build with the latest action rev
-      uses: shalzz/zola-deploy-action@master
-      env:
-        BUILD_ONLY: true
-        BUILD_DIR: test-site
-        CHECK_LINKS: true
-        CHECK_FLAGS: --drafts
+      - uses: actions/checkout@master
+      - name: Build with the latest action rev
+        uses: cybardev/zola-deploy-action@main
+        env:
+          BUILD_ONLY: true
+          BUILD_DIR: test-site
+          CHECK_LINKS: true
+          CHECK_FLAGS: --drafts
