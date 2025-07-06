@@ -3,7 +3,7 @@ description: "Build and deploy a Zola site to GitHub Pages"
 author: "cybardev"
 runs:
   using: "docker"
-  image: "ghcr.io/cybardev/zola-deploy-action:main"
+  image: "docker://ghcr.io/cybardev/zola-deploy-action:main"
 branding:
   icon: "upload-cloud"
   color: "orange"
