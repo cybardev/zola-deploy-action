@@ -1,5 +1,12 @@
 # Trigger the workflow on push or pull request
-on: [push, pull_request]
+on:
+  workflow_call:
+  pull_request:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/main.yml"
+      - "entrypoint.sh"
 
 name: Test
 jobs:

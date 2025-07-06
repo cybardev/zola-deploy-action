@@ -1,5 +1,15 @@
 # Trigger the workflow on push or pull request
-on: [push, pull_request]
+on:
+  workflow_call:
+  pull_request:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/build.yml"
+      - "action.yaml"
+      - "entrypoint.sh"
+      - "Dockerfile"
+      - "test-site/**"
 
 name: Build
 jobs:
@@ -14,6 +24,7 @@ jobs:
           BUILD_ONLY: true
           BUILD_DIR: test-site
   build-2:
+    needs: build-1
     name: Build with BUILD_FLAGS
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +36,7 @@ jobs:
           BUILD_DIR: test-site
           BUILD_FLAGS: --drafts --base-url example.com
   build-3:
+    needs: build-2
     name: Build with CHECK_LINKS
     runs-on: ubuntu-latest
     steps:
@@ -36,6 +48,7 @@ jobs:
           BUILD_DIR: test-site
           CHECK_LINKS: true
   build-4:
+    needs: build-3
     name: Build with CHECK_LINKS and CHECK_FLAGS
     runs-on: ubuntu-latest
     steps:
