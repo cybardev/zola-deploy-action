@@ -1,4 +1,4 @@
-name: "Zola Deploy to Pages"
+name: "Zola Pages Deploy"
 description: "Build and deploy a Zola site to GitHub Pages"
 author: "cybardev"
 runs:
